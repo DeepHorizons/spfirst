@@ -49,23 +49,26 @@ switch action
     case 'Initialize'
         %-----------------------------------------------------------
         
-        %---  Check the installation, the Matlab Version, and the Screen Size  ---%
-        errCmd = 'errordlg(lasterr,''Error Initializing Figure''); error(lasterr);';
-        cmdCheck1 = 'installcheck;';
-        cmdCheck2 = 'h.MATLABVER = versioncheck(5.1);';
-        cmdCheck3 = 'screensizecheck([800 600]);';
-        cmdCheck4 = ['adjustpath(''' mfilename ''');'];
-        eval(cmdCheck1,errCmd);       % Simple Installation Check
-        eval(cmdCheck2,errCmd);       % Check Matlab Version
-        eval(cmdCheck3,errCmd);       % Check Screen Size
-        eval(cmdCheck4,errCmd);       % Adjust path if necessary
-        
-        %---  Set up GUI  ---%
-        if h.MATLABVER == 5.1
-            gui51;
-        else
-            gui;
-        end
+		if( isOctave)
+		    gui;
+		else
+			%---  Check the installation, the Matlab Version, and the Screen Size  ---%
+			errCmd = 'errordlg(lasterr,''Error Initializing Figure''); error(lasterr);';
+			cmdCheck1 = 'installcheck;';
+			cmdCheck2 = 'h.MATLABVER = versioncheck(5.1);';
+			cmdCheck3 = 'screensizecheck([800 600]);';
+			cmdCheck4 = ['adjustpath(''' mfilename ''');'];
+			eval(cmdCheck1,errCmd);       % Simple Installation Check
+			eval(cmdCheck2,errCmd);       % Check Matlab Version
+			eval(cmdCheck3,errCmd);       % Check Screen Size
+			eval(cmdCheck4,errCmd);       % Adjust path if necessary
+			
+			%---  Set up GUI  ---%
+			if h.MATLABVER == 5.1
+				gui51;
+			else
+				gui;
+			end
         strVersion = '2.12';           % Version string for figure title
         set(gcf,'Name', ['Reading Sinusoids Drill v' strVersion]);
         h.LineWidth = 2;
