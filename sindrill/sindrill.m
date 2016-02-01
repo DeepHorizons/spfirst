@@ -69,6 +69,7 @@ switch action
 			else
 				gui;
 			end
+		end
         strVersion = '2.12';           % Version string for figure title
         set(gcf,'Name', ['Reading Sinusoids Drill v' strVersion]);
         h.LineWidth = 2;
