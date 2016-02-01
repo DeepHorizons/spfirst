@@ -15,7 +15,7 @@ function hv = zcat(z, arg2, arg3)
 % based on the MATLAB toolbox function COMPASS
 
 vv = version;
-if( vv(1)>='5')
+if( isOctave || vv(1)>='5')
 	linetype = 'b-';
 else
 	linetype = 'w-';  %<-- WHITE is NOT a good default in v5
