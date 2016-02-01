@@ -25,7 +25,7 @@ function hv = zvect(zFrom, zTo, arg3, arg4)
 zFrom = zFrom(:).';
 scale = 1.0;
 vv = version;
-if( vv(1)>='5')
+if( isOctave || vv(1)>='5')
 	linetype = 'b-';
 else
 	linetype = 'w:-'; %<--- WHITE is NOT good in v5 
