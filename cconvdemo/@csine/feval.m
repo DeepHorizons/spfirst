@@ -1,3 +1,0 @@
-function y = feval(sig,t)
-y = sig.Amplitude * sin(2*pi/sig.Period*(t-sig.Delay)+sig.Phase) .* ...
-   ( sig.Delay<=t  &  t<=sig.Delay+sig.Length );
