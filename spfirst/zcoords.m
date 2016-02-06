@@ -7,7 +7,7 @@ function hz = zcoords( linetype )
 %         hz = graphics handle
 if( nargin == 0 )
   vv = version;
-  if( vv(1)>='5')
+  if( isOctave || vv(1)>='5')
 	linetype = 'b:';
   else
 	linetype = 'w:';

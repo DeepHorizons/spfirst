@@ -9,7 +9,7 @@ function huc = ucplot( radius, center, arg3 )
 %
 %	See also ZVECT
 vv = version;
-if( vv(1)>='5')
+if( isOctave || vv(1)>='5')
 	linetype = 'b:';
 else
 	linetype = 'w:';

@@ -66,7 +66,7 @@ hh = plot( del_t*[0:(n-1)], x, '-w',  ends, sepy, ':w',...
       ends, zeroy, '--w', xtick, ytick, ':w' );
 axis( [ ends'  [(nrows-0.5) -0.5]*yscale ] );
 vv = version;
-if( vv(1)>='5' )
+if( isOctave || vv(1)>='5')
   set(hh,'color','b');
 end
 if( nargout>0 )
