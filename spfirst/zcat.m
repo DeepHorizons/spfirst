@@ -24,9 +24,9 @@ z = z(:).';
 scale = 1.0;
 if( nargin==2 )
    if( isOctave || vv(1)>='7')
-      arg_is_str = ischar(arg2)
+      arg_is_str = ischar(arg2);
    else
-      arg_is_str = isstr(arg2)
+      arg_is_str = isstr(arg2);
    end
 
    if( arg_is_str ),  linetype = arg2;
@@ -34,9 +34,9 @@ if( nargin==2 )
    end
 elseif( nargin == 3 )
    if( isOctave || vv(1)>='7')
-      arg_is_str = ischar(arg3)
+      arg_is_str = ischar(arg3);
    else
-      arg_is_str = isstr(arg3)
+      arg_is_str = isstr(arg3);
    end
 
    if( arg_is_str ),  linetype = arg2; scale = arg3;

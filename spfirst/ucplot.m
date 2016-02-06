@@ -17,9 +17,9 @@ end
 rad = 1.0;  cent = 0;
 if( nargin == 1 )
    if( isOctave || vv(1)>='7')
-      arg_is_str = ischar(radius)
+      arg_is_str = ischar(radius);
    else
-      arg_is_str = isstr(radius)
+      arg_is_str = isstr(radius);
    end
 
    if( arg_is_str ), linetype = radius;
@@ -27,9 +27,9 @@ if( nargin == 1 )
    end
 elseif( nargin == 2 )
    if( isOctave || vv(1)>='7')
-      arg_is_str = ischar(center)
+      arg_is_str = ischar(center);
    else
-      arg_is_str = isstr(center)
+      arg_is_str = isstr(center);
    end
 
    rad = radius;
