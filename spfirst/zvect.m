@@ -33,7 +33,13 @@ end
 if( nargin==1 )
    zTo = zFrom;  zFrom = 0*zTo;
 elseif( nargin == 2 )
-   if( isstr(zTo) )
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(zTo)
+   else
+      arg_is_str = isstr(zTo)
+   end
+
+   if( arg_is_str )
       linetype = zTo;  zTo = zFrom;  zFrom = 0*zTo;
    elseif( isempty(zTo) )
       zTo = zFrom;  zFrom = 0*zTo;
@@ -41,11 +47,23 @@ elseif( nargin == 2 )
       zTo = zTo*ones(size(zFrom));
    end
 elseif( nargin==3 )
-   if( isstr(arg3) ),  linetype = arg3;
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(arg3)
+   else
+      arg_is_str = isstr(arg3)
+   end
+
+   if( arg_is_str ),  linetype = arg3;
    else,               scale = arg3;
    end
 elseif( nargin == 4 )
-   if( isstr(arg3) ),  linetype = arg3; scale = arg4;
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(arg3)
+   else
+      arg_is_str = isstr(arg3)
+   end
+
+   if( arg_is_str ),  linetype = arg3; scale = arg4;
    else,               scale = arg3; linetype = arg4;
    end
 end

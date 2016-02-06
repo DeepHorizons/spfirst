@@ -23,11 +23,23 @@ end
 z = z(:).';
 scale = 1.0;
 if( nargin==2 )
-   if( isstr(arg2) ),  linetype = arg2;
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(arg2)
+   else
+      arg_is_str = isstr(arg2)
+   end
+
+   if( arg_is_str ),  linetype = arg2;
    else,               scale = arg2;
    end
 elseif( nargin == 3 )
-   if( isstr(arg3) ),  linetype = arg2; scale = arg3;
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(arg3)
+   else
+      arg_is_str = isstr(arg3)
+   end
+
+   if( arg_is_str ),  linetype = arg2; scale = arg3;
    else,               scale = arg2; linetype = arg3;
    end
 end

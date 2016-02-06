@@ -16,12 +16,24 @@ else
 end
 rad = 1.0;  cent = 0;
 if( nargin == 1 )
-   if( isstr(radius) ), linetype = radius;
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(radius)
+   else
+      arg_is_str = isstr(radius)
+   end
+
+   if( arg_is_str ), linetype = radius;
    else,                rad = radius;
    end
 elseif( nargin == 2 )
+   if( isOctave || vv(1)>='7')
+      arg_is_str = ischar(center)
+   else
+      arg_is_str = isstr(center)
+   end
+
    rad = radius;
-   if( isstr(center) ), linetype = center;
+   if( arg_is_str ), linetype = center;
    else,                cent = center;
    end
 elseif( nargin == 3 )
