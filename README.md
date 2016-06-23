@@ -1,7 +1,7 @@
 spfirst
 =======
 This is a port from the MATLAB version by Jim McClellan available at  
-http://users.ece.gatech.edu/mcclella/SPFirst/Updates/SPFirstMATLAB.html  
+http://spfirst.gatech.edu/matlab/ 
 to a MATLAB and Octave compatible version.
 
 How to install
